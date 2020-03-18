@@ -1,10 +1,4 @@
-//
-//  main.cpp
-//  random_pass
-//
-//  Created by Mikołaj Semeniuk on 16/03/2020.
-//  Copyright © 2020 Mikołaj Semeniuk. All rights reserved.
-//
+// Random_Password
 
 #include <iostream>
 #include <time.h>
@@ -20,9 +14,9 @@ string random_password()
     if (n < 14)
         return "hasło powinno mieć conajmniej 14 znaków";
     
-    string alphabet = "abcdefghij";
-    string ALPHABET = "ABCDEFGHIJ";
-    string s_symbol = "!@#$%^&*(";
+    string lowers = "abcdefghij";
+    string uppers = "ABCDEFGHIJ";
+    string specials = "!@#$%^&*(";
     string numbers = "0123456789";
     
     char pass[n];
@@ -30,9 +24,9 @@ string random_password()
     {
         int random_number = rand() % 4;
         
-        char lower = alphabet[rand() % 10];
-        char upper = ALPHABET[rand() % 10];
-        char special = s_symbol[rand() % 10];
+        char lower = lowers[rand() % 10];
+        char upper = uppers[rand() % 10];
+        char special = specials[rand() % 10];
         char number = numbers[rand() % 10];
         
         if (random_number == 0)
